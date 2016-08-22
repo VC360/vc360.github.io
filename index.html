@@ -22,6 +22,25 @@
 			scene.add( cube );
 
 			camera.position.z = 5;
+			
+			// Simple rig for rotating around 3 axes
+
+			var m = new THREE.Matrix4();
+
+			var m1 = new THREE.Matrix4();
+			var m2 = new THREE.Matrix4();
+			var m3 = new THREE.Matrix4();
+
+			var alpha = 0;
+			var beta = Math.PI;
+			var gamma = Math.PI/2;
+
+			m1.makeRotationX( alpha );
+			m2.makeRotationY( beta );
+			m3.makeRotationZ( gamma );
+
+			m.multiplyMatrices( m1, m2 );
+			m.multiply( m3 );
 
 			var render = function () {
 				requestAnimationFrame( render );
