@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>My first Three.js app</title>
+		<title>VR360</title>
 		<style>
 			body { margin: 0; }
 			canvas { width: 100%; height: 100% }
@@ -20,32 +20,19 @@
 			var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 			var cube = new THREE.Mesh( geometry, material );
 			scene.add( cube );
-			
-			camera.position.x = 0;
-			camera.position.y = 0;
+
 			camera.position.z = 5;
-			
-			var jaira = function () {
-				var jairax = Math.round(event.gamma);
-				var jairay = Math.round(event.beta);
-			};
 
 			var render = function () {
 				requestAnimationFrame( render );
 
 				cube.rotation.x += 0.1;
 				cube.rotation.y += 0.1;
-				
-				camera.position.x = jairax * 0.001;
-				camera.position.y = jairay * 0.001;
-				
-				document.getElementById("demo").innerHTML = jairax;
 
 				renderer.render(scene, camera);
 			};
-			jaira();
+
 			render();
 		</script>
-		<p id="demo"></p>
 	</body>
 </html>
