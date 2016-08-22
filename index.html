@@ -31,7 +31,14 @@
 
 				cube.rotation.x += 0.1;
 				cube.rotation.y += 0.1;
-				camera.position.z -= 0.01;
+				camera.position.z -= 1;
+				
+				if(camera.position.z == 0){
+					for(camera.position.z <= 10){
+						camera.position.z += 1;
+						renderer.render(scene, camera);
+					}
+				}
 
 				renderer.render(scene, camera);
 			};
