@@ -38,11 +38,14 @@
 				
 				camera.position.x = jairax * 0.001;
 				camera.position.y = jairay * 0.001;
+				
+				document.getElementById("demo").innerHTML = jairax;
 
 				renderer.render(scene, camera);
 			};
 			jaira();
 			render();
 		</script>
+		<p id="demo"></p>
 	</body>
 </html>
