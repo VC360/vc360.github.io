@@ -20,33 +20,16 @@
 			var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 			var cube = new THREE.Mesh( geometry, material );
 			scene.add( cube );
-
-			camera.position.z = 5;
 			
-			// Simple rig for rotating around 3 axes
+			camera.position.z = 10;
 
-			var m = new THREE.Matrix4();
-
-			var m1 = new THREE.Matrix4();
-			var m2 = new THREE.Matrix4();
-			var m3 = new THREE.Matrix4();
-
-			var alpha = 0;
-			var beta = Math.PI;
-			var gamma = Math.PI/2;
-
-			m1.makeRotationX( alpha );
-			m2.makeRotationY( beta );
-			m3.makeRotationZ( gamma );
-
-			m.multiplyMatrices( m1, m2 );
-			m.multiply( m3 );
-
+			
 			var render = function () {
 				requestAnimationFrame( render );
 
 				cube.rotation.x += 0.1;
 				cube.rotation.y += 0.1;
+				camera.position.z -= 0.001;
 
 				renderer.render(scene, camera);
 			};
