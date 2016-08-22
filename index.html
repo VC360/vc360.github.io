@@ -24,6 +24,11 @@
 			camera.position.x = 0;
 			camera.position.y = 0;
 			camera.position.z = 5;
+			
+			var jaira = function () {
+				var jairax = Math.round(event.gamma);
+				var jairay = Math.round(event.beta);
+			};
 
 			var render = function () {
 				requestAnimationFrame( render );
@@ -31,12 +36,12 @@
 				cube.rotation.x += 0.1;
 				cube.rotation.y += 0.1;
 				
-				camera.position.x = Math.round(event.gamma) * 0.0001;
-				camera.position.y = Math.round(event.beta) * 0.0001;
+				camera.position.x = jairax * 0.001;
+				camera.position.y = jairay * 0.001;
 
 				renderer.render(scene, camera);
 			};
-
+			jaira();
 			render();
 		</script>
 	</body>
