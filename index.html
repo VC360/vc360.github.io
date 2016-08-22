@@ -11,23 +11,6 @@
 	<body>
 		<script src="js/three.js"></script>
 		<script>
-		
-			if (window.DeviceOrientationEvent) {
-		
-			window.addEventListener("deviceorientation", function(event) 
-			{
-			
-			var xValue = Math.round(event.gamma);
-			var yValue = Math.round(event.beta);
-			var Rotation = Math.round(event.alpha);
-			
-			}, true);
-		
-		
-		
-			} else {
-			alert("Sorry, your browser doesn't support Device Orientation");
-			}
 			
 			var scene = new THREE.Scene();
 			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
@@ -49,6 +32,10 @@
 
 				cube.rotation.x += 0.1;
 				cube.rotation.y += 0.1;
+				
+				var xValue = Math.round(event.gamma);
+				var yValue = Math.round(event.beta);
+				var Rotation = Math.round(event.alpha);
 				
 				camera.position.x = Math.round(event.gamma);
 				camera.position.y = Math.round(event.beta);
