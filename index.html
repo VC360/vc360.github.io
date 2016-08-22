@@ -32,13 +32,6 @@
 
 				cube.rotation.x += 0.1;
 				cube.rotation.y += 0.1;
-				
-				var xValue = Math.round(event.gamma);
-				var yValue = Math.round(event.beta);
-				var Rotation = Math.round(event.alpha);
-				
-				camera.position.x = Math.round(event.gamma);
-				camera.position.y = Math.round(event.beta);
 
 				renderer.render(scene, camera);
 			};
